@@ -6,7 +6,7 @@ const exec = utils.promisify(require("child_process").exec);
 
 const RpcConfig = z.object({
   networkName: z.string(),
-
+  apiKey: z.string(),
   rpcUrl: z.string(),
 });
 
