@@ -4,3 +4,34 @@ out = 'out'
 libs = ['lib']
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
+
+[rpc_endpoints]
+# mainnets
+arbitrum = "${ARBI_ONE_RPC_URL}"
+mainnet = "${MAINNET_RPC_URL}"
+optimism = "${OPT_MAINNET_RPC_URL}"
+polygon = "${POLYGON_MAINNET_RPC_URL}"
+# avalanche = "${AVALANCHE_RPC_URL}"
+# fantom = "${FANTOM_RPC_URL}"
+
+# testnets
+goerli = "${ETH_GOERLI_RPC_URL}"
+arbitrum-goerli = "${ARBI_GOERLI_RPC_URL}"
+optimism-goerli = "${OPT_GOERLI_RPC_URL}"
+polygon-mumbai = "${POLYGON_MUMBAI_RPC_URL}"
+
+
+[etherscan]
+# mainnets
+mainnet = {key = "${ETHERSCAN_API_KEY}"}
+arbitrum = {key = "${ARBISCAN_API_KEY}", url = "https://api.arbiscan.io/api"}
+optimism = {key = "${OPTSCAN_API_KEY}", url = "https://api-optimistic.etherscan.io/api"}
+polygon = {key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api"}
+# avalanche = {key = "${SNOWTRACE_KEY}", url = "https://api.snowtrace.io/api"}
+# fantom = {key = "${FTMSCAN_KEY}", url = "https://api.ftmscan.com/api"}
+
+# testnets
+goerli = {key = "${ETHERSCAN_API_KEY}", url = "https://api-goerli.etherscan.io/api"}
+arbitrum-goerli = {key = "${ARBISCAN_API_KEY}", url = "https://api-goerli.arbiscan.io/api"}
+optimism-goerli = {key = "${OPTSCAN_API_KEY}", url = "https://api-goerli-optimism.etherscan.io/api"}
+polygon-mumbai = {key = "${POLYGONSCAN_API_KEY}", url = "https://api-testnet.polygonscan.com/api"}

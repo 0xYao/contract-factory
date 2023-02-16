@@ -13,3 +13,24 @@ This repository provides a simple Foundry template to deploy a single contract f
 ## Testing
 
 - `forge test -vvv`
+
+# CREATE3 factory
+
+The deployment script above has a problem where if we want to deploy the factory contract to the same address, we have to make sure the deployer has the same nonce across every chain. It can cause headaches if you accidentally sent a transaction on one chain because you have to keep the nonce in sync on other chains.
+
+Zefram's CREATE3 factory solves this issue:
+
+> the address of the deployed contract is determined by only the deployer address and the salt. This makes it far easier to deploy contracts to multiple chains at the same addresses.
+
+Read more about it on [Zefram's repository](https://github.com/ZeframLou/create3-factory). In my repository, I have added support for deploying to testnets, verifying the contract factory, and show you usage of how we can deploy other contracts using CREATE3.
+
+For example, I will deploy the CREATE3 contract on different chains first (I still have make sure the deployer nonce is in sync in this case) and I will deploy the `ExampleContractFactory` using the CREATE3 factory.
+
+## Deploy the CREATE3 factory
+
+```
+node ./deploy/deploy-create3.js
+node ./script/verify-create3.js
+```
+
+## Deploy a contract using the CREATE3 factory

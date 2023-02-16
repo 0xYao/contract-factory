@@ -1,8 +1,6 @@
 require("dotenv").config();
 const { z } = require("zod");
-
-const utils = require("util");
-const exec = utils.promisify(require("child_process").exec);
+const { exec, logExecOutput } = require("./utils");
 
 const RpcConfig = z.object({
   networkName: z.string(),
@@ -65,16 +63,6 @@ const config = Config.parse({
   constructorArgs: process.env.CONSTRUCTOR_ARGS,
   rpc: rpcConfigs,
 });
-
-const logExecOutput = (output) => {
-  if (output.stdout) {
-    console.log(output.stdout);
-  }
-
-  if (output.stderr) {
-    console.log(output.stderr);
-  }
-};
 
 const main = async () => {
   const buildOutput = await exec("forge build --extra-output-files abi");
