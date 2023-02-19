@@ -24,6 +24,13 @@ Zefram's CREATE3 factory solves this issue:
 
 Read more about it on [Zefram's repository](https://github.com/ZeframLou/create3-factory). In my repository, I have added support for deploying to testnets, verifying the contract factory, and show you usage of how we can deploy other contracts using CREATE3.
 
+`CREATE3Factory` has been deployed to `0x49600457B3610198f015568Db6CEfAA277496cbE` on the following testnets
+
+- Arbitrum Goerli
+- Goerli
+- Optimism Goerli
+- Polygon Mumbai
+
 For example, I will deploy the CREATE3 contract on different chains first (I still have make sure the deployer nonce is in sync in this case) and I will deploy the `ExampleContractFactory` using the CREATE3 factory.
 
 ## Deploy the CREATE3 factory
