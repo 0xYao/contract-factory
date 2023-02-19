@@ -1,7 +1,7 @@
 const { verifyContract, supportedNetworks } = require("./utils");
 const buildOutput = require("../out/ExampleContractFactory.sol/ExampleContractFactory.json");
 
-const verifyCreate3 = async (networkName, apiKey) => {
+const verifyExampleFactory = async (networkName, apiKey) => {
   const contractAddressJson = require(`../deployments/${networkName}.json`);
   const contractAddress = contractAddressJson.ExampleContractFactory;
 
@@ -22,7 +22,7 @@ const main = async () => {
   return Promise.all(
     supportedNetworks.map(async (data) => {
       try {
-        await verifyCreate3(data.network, data.apiKey);
+        await verifyExampleFactory(data.network, data.apiKey);
       } catch (err) {
         console.error({
           msg: `Failed to verify the wallet factory contract on ${data.network}`,
