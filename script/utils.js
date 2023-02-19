@@ -62,10 +62,15 @@ function getRandomInt(min = 0, max = 2 ** 64) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function intToBytes32(n) {
+  return "0x" + parseInt(n).toString(16).padStart(64, "0");
+}
+
 module.exports = {
   exec,
   logExecOutput,
   verifyContract,
   getRandomInt,
+  intToBytes32,
   supportedNetworks,
 };

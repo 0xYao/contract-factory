@@ -28,9 +28,25 @@ For example, I will deploy the CREATE3 contract on different chains first (I sti
 
 ## Deploy the CREATE3 factory
 
-```
-node ./deploy/deploy-create3.js
-node ./script/verify-create3.js
+
+```bash
+# 1. Deploy the CREATE3 factory on every chain
+node deploy/deploy-create3
+
+# 2. Add the deployed CREATE3 factory address from Arbitrum Goerli to the CREATE3Factory field of deployments/arbitrum-goerli.json
+
+# 3. Verify the CREATE3 factory on every chain
+node script/verify-create3
 ```
 
 ## Deploy a contract using the CREATE3 factory
+
+```bash
+# 1. Deploy the ExampleFactory contract on every chain using the CREATE3 factory that we just deployed
+node deploy/deploy-example-factory
+
+# 2. Add the example wallet factory address from Arbitrum Goerli to the ExampleContractFactory field of deployments/arbitrum-goerli.json
+
+# 3. Verify the ExampleFactory contract on every chain
+node script/verify-example-factory
+```
