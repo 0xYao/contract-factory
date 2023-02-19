@@ -33,6 +33,10 @@ Read more about it on [Zefram's repository](https://github.com/ZeframLou/create3
 
 For example, I will deploy the CREATE3 contract on different chains first (I still have make sure the deployer nonce is in sync in this case) and I will deploy the `ExampleContractFactory` using the CREATE3 factory.
 
+## Setup
+
+- Follow the "Usage" steps above to setup for the repository
+
 ## Deploy the CREATE3 factory
 
 
